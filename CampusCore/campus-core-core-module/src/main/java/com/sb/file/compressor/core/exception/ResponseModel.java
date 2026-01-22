@@ -11,10 +11,18 @@ import lombok.NoArgsConstructor;
  * Project sb-back-core.
  */
 @Data
-@AllArgsConstructor@NoArgsConstructor@Builder
+@Builder
 public class ResponseModel {
 
     private int status;
     private String message;
     private Object data;
+
+    public ResponseModel(int status, String message, Object data) {
+        this.status = status;
+        this.message = message;
+        this.data = data;
+    }
+
+    public ResponseModel() {}
 }

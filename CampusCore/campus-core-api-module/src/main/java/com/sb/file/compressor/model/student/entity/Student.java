@@ -1,6 +1,7 @@
 package com.sb.file.compressor.model.student.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sb.file.compressor.model.gurdian.entity.Guardian;
 import com.sb.file.compressor.model.student.enums.AdmissionType;
 import com.sb.file.compressor.model.student.enums.StudentStatus;
 import com.sb.file.compressor.core.entity.BaseEntity;
@@ -85,5 +86,7 @@ public class Student extends BaseEntity<Long> {
     private Boolean active;
 
 
+    @OneToOne
+    private Guardian guardian;
 
 }

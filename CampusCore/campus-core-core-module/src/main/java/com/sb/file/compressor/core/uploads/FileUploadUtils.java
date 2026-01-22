@@ -41,7 +41,7 @@ public class FileUploadUtils {
                     try {
                         f.delete();
                     } catch (Exception e) {
-                        log.error("Failed to delete file {} {}", f, e);
+
                     }
                 }
             }
