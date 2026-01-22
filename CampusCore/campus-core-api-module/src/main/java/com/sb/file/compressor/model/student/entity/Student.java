@@ -1,26 +1,24 @@
 package com.sb.file.compressor.model.student.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sb.file.compressor.core.entity.BaseEntity;
+import com.sb.file.compressor.core.enums.Gender;
 import com.sb.file.compressor.model.gurdian.entity.Guardian;
 import com.sb.file.compressor.model.student.enums.AdmissionType;
 import com.sb.file.compressor.model.student.enums.StudentStatus;
-import com.sb.file.compressor.core.entity.BaseEntity;
-import com.sb.file.compressor.core.enums.Gender;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 @Table(
-    name = "students",
-    indexes = {
-        @Index(name = "idx_student_email", columnList = "email"),
-        @Index(name = "idx_student_roll", columnList = "rollNo"),
-        @Index(name = "idx_student_reg", columnList = "registrationNo")
-    }
+        name = "students",
+        indexes = {
+                @Index(name = "idx_student_email", columnList = "email"),
+                @Index(name = "idx_student_roll", columnList = "rollNo"),
+                @Index(name = "idx_student_reg", columnList = "registrationNo")
+        }
 )
 @Getter
 @Setter
@@ -67,11 +65,6 @@ public class Student extends BaseEntity<Long> {
 
     @Enumerated(EnumType.STRING)
     private AdmissionType admissionType; // REGULAR, LATERAL, SCHOLARSHIP
-
-    // ================= GUARDIAN INFO =================
-    private String guardianName;
-    private String guardianPhone;
-    private String guardianRelation;
 
     // ================= ADDRESS =================
     private String address;

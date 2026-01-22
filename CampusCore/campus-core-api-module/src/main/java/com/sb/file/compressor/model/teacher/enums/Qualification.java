@@ -9,4 +9,5 @@ package com.sb.file.compressor.model.teacher.enums;
  * -------------------------------------------------------------
  */
 public enum Qualification {
+    MSc, PhD, MTech,BACHELOR,PLUS_2
 }

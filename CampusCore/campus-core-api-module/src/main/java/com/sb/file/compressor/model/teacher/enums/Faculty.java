@@ -9,4 +9,5 @@ package com.sb.file.compressor.model.teacher.enums;
  * -------------------------------------------------------------
  */
 public enum Faculty {
+    FULL_TIME,PART_TIME
 }

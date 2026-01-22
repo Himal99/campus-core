@@ -9,4 +9,5 @@ package com.sb.file.compressor.model.teacher.enums;
  * -------------------------------------------------------------
  */
 public enum Designation {
+    Lecturer, Assistant ,Professor, HOD
 }

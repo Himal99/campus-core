@@ -3,6 +3,8 @@ package com.sb.file.compressor.model.gurdian.repo;
 import com.sb.file.compressor.model.gurdian.entity.Guardian;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 /**
  * -------------------------------------------------------------
  * |   Author      : Himal Rai
@@ -12,4 +14,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * -------------------------------------------------------------
  */
 public interface GuardianRepository extends JpaRepository<Guardian, Long> {
+    Optional<Guardian> findByEmail(String email);
+    Optional<Guardian> findByPhone(String phone);
 }

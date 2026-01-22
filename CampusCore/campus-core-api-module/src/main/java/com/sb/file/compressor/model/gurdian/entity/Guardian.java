@@ -1,5 +1,6 @@
 package com.sb.file.compressor.model.gurdian.entity;
 
+import com.sb.file.compressor.core.entity.BaseEntity;
 import com.sb.file.compressor.model.gurdian.enums.GuardianRelation;
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,20 +20,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Guardian {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Guardian extends BaseEntity<Long> {
 
     // ================= BASIC INFO =================
     @Column(nullable = false, length = 150)
     private String fullName;
 
-    @Column(nullable = false, length = 15)
+    @Column(nullable = false, length = 15, unique = true)
     private String phone;
 
-    @Column(length = 150)
+    @Column(length = 150,unique = true)
     private String email;
 
     @Enumerated(EnumType.STRING)
@@ -49,17 +46,6 @@ public class Guardian {
     // ================= SYSTEM / AUDIT =================
     private Boolean active;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
-        this.active = true;
-    }
 
-    @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = LocalDateTime.now();
-    }
 }

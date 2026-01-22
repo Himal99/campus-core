@@ -25,6 +25,7 @@ public class StudentService implements BaseService<Student> {
     private final StudentRepository studentRepository;
 
     public StudentService(StudentRepository studentRepository) {
+
         this.studentRepository = studentRepository;
     }
 
@@ -40,6 +41,7 @@ public class StudentService implements BaseService<Student> {
 
     @Override
     public Student save(Student student) {
+
         return studentRepository.save(student);
     }
 
